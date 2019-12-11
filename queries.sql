@@ -34,6 +34,8 @@ where ContactName is "Mr. Baggins of Bag End"
     /* Best Answer      This returns the number 70 with a records count of 1  meaning it perfectly counted number of cities*/
     SELECT COUNT(city) from (SELECT distinct city
     FROM customers)
+    -- same as above
+   SELECT COUNT(distinct city) from customers
 
     /* Medium Answer   this returns 2 columns... 1 with the city names(no double counts) another with the count for each city total of 70 records*/
     SELECT city, COUNT(*) FROM customers GROUP BY City

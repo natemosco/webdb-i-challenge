@@ -34,10 +34,10 @@ router.get("/:id", (req, res) => {
 });
 router.post("/", (req, res) => {
   const accountDetails = req.body;
-  db("account")
+  db("accounts")
     .insert(accountDetails, "id")
-    .then(ids => {
-      //console.log(ids, 'response from POST accounts/');
+    .then(([id]) => {
+      console.log(id, "response from POST accounts/");
       db("accounts")
         .where({ id })
         .first()
